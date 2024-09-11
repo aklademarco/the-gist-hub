@@ -1,4 +1,7 @@
 /* Basic Styling */
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -15,6 +18,61 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+header.dark-mode {
+  background-color: #000;
+}
+
+section.dark-mode {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Toggle Button */
+#dark-mode-toggle {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #e55337;
+}
+
+/* Search Form */
+#search-form {
+  display: inline-block;
+  position: relative;
+}
+#search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  background-color: #ff6347;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-color: #e55337;
+}
 nav ul {
   list-style: none;
   margin: 0;
@@ -111,6 +169,9 @@ h3 {
 .subscribe-btn:hover {
   background-color: #e55337;
   transform: scale(1.05); /* Slight grow on hover */
+}
+.subscribe-btn i {
+  margin-right: 8px;
 }
 
 /* News Section */
@@ -221,6 +282,26 @@ footer {
 }
 
 /* Media Queries for Mobile Responsive Design */
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  .subscribe-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  .submit-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
 @media screen and (max-width: 768px) {
   /* Navigation */
   nav ul {
@@ -314,5 +395,49 @@ footer {
   footer {
     padding: 20px;
     font-size: 1em;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff; /* Change text color to white */
+}
+
+header.dark-mode {
+  background-color: #000;
+  color: #fff; /* Ensure header text is white */
+}
+
+section.dark-mode {
+  background-color: #444;
+  color: #fff; /* Ensure section text is white */
+}
+
+footer.dark-mode {
+  background-color: #000;
+  color: #fff; /* Ensure footer text is white */
+}
+
+/* Override for other text elements if necessary */
+h1,
+h2,
+h3,
+p,
+a {
+  color: inherit; /* Ensure they inherit the color from the parent (white in dark mode) */
+}
+
+/* Specific override for links in dark mode */
+a.dark-mode {
+  color: #ff6347; /* Keep links in a different color, or use white */
+}
+
+@media screen and (max-width: 480px) {
+  nav li {
+    margin-bottom: 10px;
+  }
+  .news-item img {
+    height: 150px; /* Slightly smaller for mobile */
   }
 }
